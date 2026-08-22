@@ -84,7 +84,7 @@ public final class WebViewEngine {
         } catch (Exception ignored) {
         }
 
-        if (Build.VERSION.SDK_INT >= Build.1S.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {){
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
     }
@@ -155,7 +155,7 @@ public final class WebViewEngine {
             }
 
             @Override
-            @RequiresApi(api = Build.1S.M)
+             @RequiresApi(api = Build.VERSION_CODES.M)
             public void onReceivedError(WebView view, WebResourceRequest request,
                                         WebResourceError error) {
                 if (request == null || !request.isForMainFrame()) {
