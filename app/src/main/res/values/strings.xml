@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Christian Life</string>
+    <string name="rewarded_ad_button">Reward Ad</string>
+    <string name="reward_received">Thank you!</string>
+    <string name="rewarded_loading">Loading ad…</string>
+    <string name="rewarded_not_ready">Ad not ready. Check internet and try again.</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_back">Back</string>
+    <string name="nav_forward">Forward</string>
+    <string name="nav_refresh">Refresh</string>
+    <string name="nav_share">Share</string>
+</resources>

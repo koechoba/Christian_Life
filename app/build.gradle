@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+}
+
+/** Shared SDK — from gradle.properties (synced from root via build_export_assets.ps1). */
+def androidCompileSdk = (findProperty('ANDROID_COMPILE_SDK') ?: '36') as int
+def androidTargetSdk = (findProperty('ANDROID_TARGET_SDK') ?: '36') as int
+def androidMinSdk = (findProperty('ANDROID_MIN_SDK') ?: '24') as int
+
+android {
+    namespace 'com.app.myapp.p770845'
+    compileSdk androidCompileSdk
+
+    defaultConfig {
+        applicationId "com.app.myapp.p770845"
+        minSdk androidMinSdk
+        targetSdk androidTargetSdk
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("${rootProject.projectDir}/release.keystore")
+            storePassword "webview_release"
+            keyAlias "release"
+            keyPassword "webview_release"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+
+    androidResources {
+        noCompress += ['json', 'txt', 'html', 'png', 'webp']
+    }
+}
+
+dependencies {
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
+}

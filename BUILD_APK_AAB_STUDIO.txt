@@ -1,0 +1,26 @@
+ANDROID STUDIO — APK & AAB (same as Build menu)
+==============================================
+
+OPTION A — Android Studio GUI
+1. Unzip this project on PC
+2. Android Studio → Open → select this folder
+3. Build → Generate Signed Bundle / APK
+   • APK  → Android App Bundle / APK → APK → release
+   • AAB  → Android App Bundle → release (Play Store)
+4. Output folder: app/build/outputs/
+
+OPTION B — Command line (Windows)
+  gradlew.bat assembleRelease     → signed release APK
+  gradlew.bat bundleRelease       → signed release AAB
+
+OPTION C — Mac / Linux
+  ./gradlew assembleRelease
+  ./gradlew bundleRelease
+
+Signing (included in this ZIP)
+  File     : release.keystore
+  Password : webview_release
+  Alias    : release
+  Key pass : webview_release
+
+App: Christian Life
