@@ -84,7 +84,7 @@ public final class WebViewEngine {
         } catch (Exception ignored) {
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
     }
